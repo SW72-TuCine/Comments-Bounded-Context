@@ -22,7 +22,7 @@ public class MovieCommentsServiceImpl implements MovieCommentsService {
     }
 
     @Override
-    public MovieComments getMovieCommentById(Long id) {
+    public MovieComments getMovieCommentById(String id) {
         return movieCommentsRepository.findById(id).orElse(null);
     }
 
@@ -32,7 +32,7 @@ public class MovieCommentsServiceImpl implements MovieCommentsService {
     }
 
     @Override
-    public MovieComments updateMovieComment(Long id, MovieComments movieComment) {
+    public MovieComments updateMovieComment(String id, MovieComments movieComment) {
         // Verificar si el comentario existe
         MovieComments existingComment = movieCommentsRepository.findById(id).orElse(null);
         if (existingComment == null) {
@@ -47,7 +47,7 @@ public class MovieCommentsServiceImpl implements MovieCommentsService {
     }
 
     @Override
-    public void deleteMovieComment(Long id) {
+    public void deleteMovieComment(String id) {
         movieCommentsRepository.deleteById(id);
     }
 }

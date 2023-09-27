@@ -1,17 +1,16 @@
 package com.tucine.comments.Models;
 
-import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
+import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
-@Entity
-@NoArgsConstructor
-@Table(name = "cineclub_comments")
+@Data
+@Document(collection = "cineclub_comments")
 public class CineclubComments extends Comment {
-    @Column(name = "cineclub_name")
+    @Field("cineclub_name")
     private String cineclub;
 
-    @OneToMany(mappedBy = "parentComment")
     private List<Comment> replies;
 }

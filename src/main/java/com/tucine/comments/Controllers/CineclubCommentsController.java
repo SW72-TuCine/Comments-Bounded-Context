@@ -27,7 +27,7 @@ public class CineclubCommentsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CineclubComments> getCineclubCommentById(@PathVariable Long id) {
+    public ResponseEntity<CineclubComments> getCineclubCommentById(@PathVariable String id) {
         CineclubComments cineclubComment = cineclubCommentsService.getCineclubCommentById(id);
         if (cineclubComment != null) {
             return new ResponseEntity<>(cineclubComment, HttpStatus.OK);
@@ -43,7 +43,7 @@ public class CineclubCommentsController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CineclubComments> updateCineclubComment(@PathVariable Long id, @RequestBody CineclubComments cineclubComment) {
+    public ResponseEntity<CineclubComments> updateCineclubComment(@PathVariable String id, @RequestBody CineclubComments cineclubComment) {
         CineclubComments updatedComment = cineclubCommentsService.updateCineclubComment(id, cineclubComment);
         if (updatedComment != null) {
             return new ResponseEntity<>(updatedComment, HttpStatus.OK);
@@ -53,7 +53,7 @@ public class CineclubCommentsController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCineclubComment(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteCineclubComment(@PathVariable String id) {
         cineclubCommentsService.deleteCineclubComment(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

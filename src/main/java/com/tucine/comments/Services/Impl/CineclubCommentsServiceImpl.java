@@ -23,7 +23,7 @@ public class CineclubCommentsServiceImpl implements CineclubCommentsService {
     }
 
     @Override
-    public CineclubComments getCineclubCommentById(Long id) {
+    public CineclubComments getCineclubCommentById(String id) {
         return cineclubCommentsRepository.findById(id).orElse(null);
     }
 
@@ -33,7 +33,7 @@ public class CineclubCommentsServiceImpl implements CineclubCommentsService {
     }
 
     @Override
-    public CineclubComments updateCineclubComment(Long id, CineclubComments cineclubComment) {
+    public CineclubComments updateCineclubComment(String id, CineclubComments cineclubComment) {
         // Verificar si el comentario existe
         CineclubComments existingComment = cineclubCommentsRepository.findById(id).orElse(null);
         if (existingComment == null) {
@@ -48,7 +48,7 @@ public class CineclubCommentsServiceImpl implements CineclubCommentsService {
     }
 
     @Override
-    public void deleteCineclubComment(Long id) {
+    public void deleteCineclubComment(String id) {
         cineclubCommentsRepository.deleteById(id);
     }
 }

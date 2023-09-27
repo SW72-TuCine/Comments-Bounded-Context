@@ -27,7 +27,7 @@ public class MovieCommentsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<MovieComments> getMovieCommentById(@PathVariable Long id) {
+    public ResponseEntity<MovieComments> getMovieCommentById(@PathVariable String id) {
         MovieComments movieComment = movieCommentsService.getMovieCommentById(id);
         if (movieComment != null) {
             return new ResponseEntity<>(movieComment, HttpStatus.OK);
@@ -43,7 +43,7 @@ public class MovieCommentsController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<MovieComments> updateMovieComment(@PathVariable Long id, @RequestBody MovieComments movieComment) {
+    public ResponseEntity<MovieComments> updateMovieComment(@PathVariable String id, @RequestBody MovieComments movieComment) {
         MovieComments updatedComment = movieCommentsService.updateMovieComment(id, movieComment);
         if (updatedComment != null) {
             return new ResponseEntity<>(updatedComment, HttpStatus.OK);
@@ -53,7 +53,7 @@ public class MovieCommentsController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMovieComment(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteMovieComment(@PathVariable String id) {
         movieCommentsService.deleteMovieComment(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

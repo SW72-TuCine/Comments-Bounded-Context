@@ -7,11 +7,11 @@ import java.util.List;
 public interface MovieCommentsService {
     List<MovieComments> getAllMovieComments();
 
-    MovieComments getMovieCommentById(Long id);
+    MovieComments getMovieCommentById(String id);
 
     MovieComments createMovieComment(MovieComments movieComment);
 
-    MovieComments updateMovieComment(Long id, MovieComments movieComment);
+    MovieComments updateMovieComment(String id, MovieComments movieComment);
 
-    void deleteMovieComment(Long id);
+    void deleteMovieComment(String id);
 }
