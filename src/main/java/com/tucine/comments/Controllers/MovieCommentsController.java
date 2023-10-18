@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/api/movie-comments")
+@RequestMapping("/api/TuCine/v1/comments/movie")
 public class MovieCommentsController {
     private final MovieCommentsService movieCommentsService;
 
