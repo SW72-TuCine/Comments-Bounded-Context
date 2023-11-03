@@ -14,5 +14,7 @@ public class CineclubComments extends Comment {
     @Field("cineclub_name")
     private String cineclub;
 
+    private Long cineclubId;
+
     private List<Comment> replies;
 }

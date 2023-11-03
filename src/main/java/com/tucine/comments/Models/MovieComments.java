@@ -14,5 +14,8 @@ public class MovieComments extends Comment {
     @Field("movie_name")
     private String movie;
 
+    private Long movieId;
+
     private List<Comment> replies;
+
 }

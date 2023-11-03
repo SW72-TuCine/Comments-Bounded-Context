@@ -23,6 +23,8 @@ public class Comment {
 
     private String author;
 
+    private Long userId;
+
     private String content;
 
     private int calification;
